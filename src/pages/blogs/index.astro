@@ -1,40 +1,17 @@
 ---
+import PostPage from "../../components/PostPage.astro";
+import MainGridLayout from "../../layouts/MainGridLayout.astro";
 import { getSortedPosts } from "../../utils/content-utils";
-import { getPostUrl } from "../../utils/url-utils";
-import SimpleLayout from "../../layouts/SimpleLayout.astro";
+import { initPostIdMap } from "../../utils/permalink-utils";
 
-const posts = await getSortedPosts();
+const allBlogPosts = await getSortedPosts();
+initPostIdMap(allBlogPosts);
+
+const page = {
+	data: allBlogPosts,
+} as any;
 ---
 
-<SimpleLayout title="blogs" description="Blog posts by Chuan Xiao.">
-	<section class="blog-header">
-		<p class="eyebrow">Writing and notes</p>
-		<h1>blogs</h1>
-		<p class="hero-summary">
-			Notes on programming, code agents, security, research practice, and
-			the tools I use while learning.
-		</p>
-	</section>
-	<ul class="post-list">
-		{posts.map((post) => (
-			<li>
-				<a class="post-link" href={getPostUrl(post)}>
-					<time class="date" datetime={post.data.published.toISOString()}>
-						{post.data.published.toLocaleDateString("en-US", {
-							year: "numeric",
-							month: "short",
-							day: "2-digit",
-						})}
-					</time>
-					<div>
-						<h2>{post.data.title}</h2>
-						<p>{post.data.description}</p>
-						<div class="tags">
-							{post.data.tags.map((tag) => <span>#{tag} </span>)}
-						</div>
-					</div>
-				</a>
-			</li>
-		))}
-	</ul>
-</SimpleLayout>
+<MainGridLayout title="blogs">
+	<PostPage page={page}></PostPage>
+</MainGridLayout>

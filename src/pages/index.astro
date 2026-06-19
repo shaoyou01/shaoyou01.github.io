@@ -1,92 +1,141 @@
 ---
-import SimpleLayout from "../layouts/SimpleLayout.astro";
+import { Icon } from "astro-icon/components";
 import { homepage } from "../data/homepage";
+import MainGridLayout from "../layouts/MainGridLayout.astro";
+
+const sectionTitleClass =
+	"flex items-center gap-3 text-2xl font-bold text-90 mb-5";
+const iconBoxClass =
+	"h-10 w-10 rounded-xl bg-(--enter-btn-bg) flex items-center justify-center text-(--primary)";
 ---
 
-<SimpleLayout
-	title="homepage"
-	description="Homepage of Chuan Xiao, also known as shaoyou."
->
-	<section class="hero">
-		<div>
-			<p class="eyebrow">Homepage / Code agents / Security</p>
-			<h1>{homepage.siteName}</h1>
-			<p class="hero-summary">{homepage.summary}</p>
-			<div class="hero-actions">
-				<a class="button" href="/blogs/">Read blogs</a>
-				<a class="button secondary" href={homepage.github}>GitHub</a>
+<MainGridLayout title="homepage" description={homepage.summary}>
+	<div class="flex flex-col gap-4">
+		<section class="card-base rounded-(--radius-large) p-6 md:p-8 onload-animation">
+			<div class="flex flex-col gap-6">
+				<div>
+					<div class="flex flex-wrap items-center gap-3 mb-4">
+						<span class="btn-regular rounded-lg h-8 px-3 text-sm font-bold">
+							{homepage.role}
+						</span>
+						<span class="text-50 text-sm">{homepage.location}</span>
+					</div>
+					<h1 class="text-4xl md:text-5xl font-bold text-90 mb-3">
+						{homepage.name}
+					</h1>
+					<div class="h-1.5 w-14 rounded-full bg-(--primary) mb-5"></div>
+					<p class="text-75 text-lg leading-8 max-w-3xl">
+						{homepage.summary}
+					</p>
+				</div>
+
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+					<div class="rounded-xl bg-(--card-bg-hover) p-4">
+						<div class="text-50 text-sm mb-1">Affiliation</div>
+						<div class="text-90 font-bold">{homepage.affiliation}</div>
+					</div>
+					<div class="rounded-xl bg-(--card-bg-hover) p-4">
+						<div class="text-50 text-sm mb-1">Graduation</div>
+						<div class="text-90 font-bold">{homepage.graduation}</div>
+					</div>
+				</div>
+
+				<div class="flex flex-wrap gap-2">
+					{homepage.interests.map((interest) => (
+						<span class="btn-regular h-8 rounded-lg px-3 text-sm">
+							# {interest}
+						</span>
+					))}
+				</div>
 			</div>
-			<div class="pill-row" aria-label="Research interests">
-				{homepage.interests.map((interest) => <span class="pill">{interest}</span>)}
+		</section>
+
+		<section class="card-base rounded-(--radius-large) p-6 md:p-8 onload-animation">
+			<h2 class={sectionTitleClass}>
+				<span class={iconBoxClass}>
+					<Icon name="material-symbols:newspaper-rounded" class="text-2xl" />
+				</span>
+				Recent News
+			</h2>
+			<div class="flex flex-col gap-3">
+				{homepage.news.map((item) => (
+					<div class="flex gap-4 rounded-xl bg-(--card-bg-hover) p-4">
+						<div class="text-(--primary) font-bold shrink-0">{item.date}</div>
+						<div class="text-75 leading-7">{item.text}</div>
+					</div>
+				))}
 			</div>
-		</div>
-		<aside class="identity-panel" aria-label="Profile">
-			<h2>{homepage.name}</h2>
-			<p>{homepage.role}</p>
-			<ul class="fact-list">
-				<li><strong>Also</strong><span>{homepage.displayName} / {homepage.handle}</span></li>
-				<li><strong>School</strong><span>{homepage.affiliation}</span></li>
-				<li><strong>Based in</strong><span>{homepage.location}</span></li>
-				<li><strong>Grad</strong><span>{homepage.graduation}</span></li>
-			</ul>
-		</aside>
-	</section>
+		</section>
 
-	<section class="section" id="news">
-		<h2>News</h2>
-		<div class="stack">
-			{homepage.news.map((item) => (
-				<article class="item">
-					<p class="date">{item.date}</p>
-					<p>{item.text}</p>
-				</article>
-			))}
-		</div>
-	</section>
+		<section class="card-base rounded-(--radius-large) p-6 md:p-8 onload-animation">
+			<h2 class={sectionTitleClass}>
+				<span class={iconBoxClass}>
+					<Icon name="material-symbols:psychology-rounded" class="text-2xl" />
+				</span>
+				Research
+			</h2>
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+				{homepage.research.map((item) => (
+					<div class="rounded-xl bg-(--card-bg-hover) p-4">
+						<div class="text-90 font-bold mb-2">{item.title}</div>
+						<p class="text-75 text-sm leading-6">{item.description}</p>
+					</div>
+				))}
+			</div>
+		</section>
 
-	<section class="section" id="research">
-		<h2>Research</h2>
-		<div class="stack">
-			{homepage.research.map((item) => (
-				<article class="item">
-					<h3>{item.title}</h3>
-					<p>{item.description}</p>
-				</article>
-			))}
-		</div>
-	</section>
+		<section class="card-base rounded-(--radius-large) p-6 md:p-8 onload-animation">
+			<h2 class={sectionTitleClass}>
+				<span class={iconBoxClass}>
+					<Icon name="material-symbols:menu-book-rounded" class="text-2xl" />
+				</span>
+				Publications
+			</h2>
+			<div class="flex flex-col gap-4">
+				{homepage.publications.map((paper) => (
+					<article class="rounded-xl bg-(--card-bg-hover) p-4">
+						<div class="flex flex-wrap gap-2 items-center mb-2">
+							<span class="btn-regular h-7 rounded-lg px-2 text-xs font-bold">
+								{paper.venue}
+							</span>
+						</div>
+						<h3 class="text-xl font-bold text-90 mb-2">{paper.title}</h3>
+						<p class="text-50 text-sm leading-6 mb-3">{paper.authors}</p>
+						<p class="text-75 leading-7">{paper.description}</p>
+					</article>
+				))}
+			</div>
+		</section>
 
-	<section class="section" id="publications">
-		<h2>Publications</h2>
-		<div class="stack">
-			{homepage.publications.map((item) => (
-				<article class="item">
-					<h3>{item.title}</h3>
-					<p class="meta">{item.venue}</p>
-					<p>{item.authors}</p>
-					<p>{item.description}</p>
-				</article>
-			))}
-		</div>
-	</section>
-
-	<section class="section" id="education">
-		<h2>Education</h2>
-		<div class="stack">
-			{homepage.education.map((item) => (
-				<article class="item">
-					<h3>{item.school}</h3>
-					<p class="meta">{item.program} / {item.period}</p>
-					<p>{item.detail}</p>
-				</article>
-			))}
-		</div>
-	</section>
-
-	<section class="section" id="awards">
-		<h2>Awards</h2>
-		<ul class="clean-list">
-			{homepage.awards.map((award) => <li>{award}</li>)}
-		</ul>
-	</section>
-</SimpleLayout>
+		<section class="card-base rounded-(--radius-large) p-6 md:p-8 onload-animation">
+			<h2 class={sectionTitleClass}>
+				<span class={iconBoxClass}>
+					<Icon name="material-symbols:school-rounded" class="text-2xl" />
+				</span>
+				Education & Awards
+			</h2>
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+				<div class="rounded-xl bg-(--card-bg-hover) p-4">
+					{homepage.education.map((edu) => (
+						<div>
+							<div class="text-90 font-bold">{edu.school}</div>
+							<div class="text-75 mt-1">{edu.program}</div>
+							<div class="text-50 text-sm mt-1">{edu.period}</div>
+							<div class="text-(--primary) text-sm font-bold mt-3">{edu.detail}</div>
+						</div>
+					))}
+				</div>
+				<div class="rounded-xl bg-(--card-bg-hover) p-4">
+					<ul class="flex flex-col gap-3">
+						{homepage.awards.map((award) => (
+							<li class="text-75 text-sm leading-6 flex gap-2">
+								<span class="text-(--primary) mt-0.5">●</span>
+								<span>{award}</span>
+							</li>
+						))}
+					</ul>
+				</div>
+			</div>
+		</section>
+	</div>
+</MainGridLayout>

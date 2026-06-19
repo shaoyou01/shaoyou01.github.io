@@ -11,7 +11,7 @@ interface Props {
 const { id, data } = Astro.props.post;
 
 const slug = removeFileExtension(id);
-const path = `/posts/${slug}`;
+const path = `/blogs/${slug}`;
 // const url = `${Astro.site?.href}${path}`;
 
 let commentService = "";

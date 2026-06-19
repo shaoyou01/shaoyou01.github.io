@@ -136,7 +136,7 @@ const {
         if (!id) return;
 
         try {
-            const stats = await window.oddmisc.getStats(`/posts/${id}/`);
+            const stats = await window.oddmisc.getStats(`/blogs/${id}/`);
             const pageViews = stats.pageviews || 0;
             const visits = stats.visits || 0;
 

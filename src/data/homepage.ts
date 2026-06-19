@@ -8,7 +8,6 @@ export const homepage = {
 	location: "Harbin, China",
 	graduation: "Expected June 2027",
 	github: "https://github.com/shaoyou01",
-	email: "",
 	summary:
 		"I work on data-centric AI, code security for code agents, and agentic reinforcement learning. My current interests center on how software engineering agents can be evaluated, improved, and aligned with realistic end-to-end development workflows.",
 	interests: [

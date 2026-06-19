@@ -110,7 +110,7 @@ const generatePostList = () => {
 
 	postCards.forEach((card) => {
 		// 查找标题链接
-		const titleLink = card.querySelector('a[href*="/posts/"].transition.group');
+		const titleLink = card.querySelector('a[href*="/blogs/"].transition.group');
 		// 查找分类链接
 		const categoryLink = card.querySelector('a[href*="/categories/"].link-lg');
 		// 查找置顶图标

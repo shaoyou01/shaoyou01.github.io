@@ -30,7 +30,7 @@ export function getPostUrlBySlug(slug: string): string {
 }
 
 export function getPostUrlByAlias(alias: string): string {
-	// 移除开头的斜杠并确保固定链接在 /blogs/ 路径下
+	// 移除开头的斜杠并确保固定链接在 /posts/ 路径下
 	const cleanAlias = alias.replace(/^\/+/, "");
 	return url(`/blogs/${cleanAlias}/`);
 }
@@ -55,7 +55,7 @@ export function getPostUrl(post: any): string {
 		return url(`/${slug}/`);
 	}
 
-	// 如果文章有 alias，使用 alias（在 /blogs/ 下）
+	// 如果文章有 alias，使用 alias（在 /posts/ 下）
 	if (post.data.alias) {
 		return getPostUrlByAlias(post.data.alias);
 	}
@@ -65,8 +65,8 @@ export function getPostUrl(post: any): string {
 }
 
 export function getTagUrl(tag: string): string {
-	if (!tag) return url("/archive/");
-	return url(`/archive/?tag=${encodeURIComponent(tag.trim())}`);
+	if (!tag) return url("/blogs/");
+	return url(`/blogs/?tag=${encodeURIComponent(tag.trim())}`);
 }
 
 export function getCategoryUrl(category: string | null): string {
@@ -76,8 +76,8 @@ export function getCategoryUrl(category: string | null): string {
 		category.trim().toLowerCase() ===
 			i18n(I18nKey.uncategorized).toLowerCase()
 	)
-		return url("/archive/?uncategorized=true");
-	return url(`/archive/?category=${encodeURIComponent(category.trim())}`);
+		return url("/blogs/?uncategorized=true");
+	return url(`/blogs/?category=${encodeURIComponent(category.trim())}`);
 }
 
 export function getDir(path: string): string {

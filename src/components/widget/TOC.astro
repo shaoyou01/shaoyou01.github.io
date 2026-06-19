@@ -268,7 +268,7 @@ class TableOfContents extends HTMLElement {
 
     regenerateTOC(retryCount = 0) {
         // 检查是否为文章页面
-        const isPostPage = window.location.pathname.includes('/posts/') || 
+        const isPostPage = window.location.pathname.includes('/blogs/') || 
                           document.querySelector('.custom-md, .markdown-content') !== null;
         if (!isPostPage) {
             // 如果不是文章页面，隐藏TOC
