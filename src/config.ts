@@ -38,7 +38,7 @@ const bannerImages = {
 
 export const siteConfig: SiteConfig = {
 	title: "shaoyou",
-	subtitle: "Homepage and blogs of Chuan Xiao.",
+	subtitle: "Homepage and blogs.",
 	siteURL: "https://shaoyou01.github.io/",
 	siteStartDate: "2026-02-24",
 	timeZone: SITE_TIMEZONE,
@@ -110,7 +110,7 @@ export const siteConfig: SiteConfig = {
 		homeText: {
 			enable: true,
 			title: "shaoyou",
-			subtitle: ["Homepage and blogs of Chuan Xiao."],
+			subtitle: ["Homepage and blogs."],
 			typewriter: {
 				enable: true,
 				speed: 100,
@@ -182,7 +182,7 @@ export const navBarConfig: NavBarConfig = {
 
 export const profileConfig: ProfileConfig = {
 	avatar: "assets/images/avatar.webp",
-	name: "Chuan Xiao",
+	name: "shaoyou",
 	bio: "Data-centric AI / Code agents / Code security",
 	typewriter: {
 		enable: true,

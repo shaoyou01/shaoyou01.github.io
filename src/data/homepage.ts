@@ -1,7 +1,7 @@
 export const homepage = {
 	siteName: "shaoyou",
-	name: "Chuan Xiao",
-	displayName: "Xiao Chuan",
+	name: "shaoyou",
+	displayName: "shaoyou",
 	handle: "shaoyou01",
 	role: "B.Eng. student in Information Security",
 	affiliation: "Faculty of Computing, Harbin Institute of Technology",
@@ -35,8 +35,7 @@ export const homepage = {
 			title:
 				"CVE-Factory: Scaling Expert-Level Agentic Tasks for Code Security Vulnerability",
 			venue: "ICML 2026 Oral",
-			authors:
-				"Xianzhen Luo*, Jingyuan Zhang*, Shiqi Zhou*, Jinyang Huang*, Chuan Xiao, Qingfu Zhu, Zhiyuan Ma, Xing Yue, Yang Yue, Wencong Zeng, Wanxiang Che",
+			authors: "Collaborative research project",
 			description:
 				"A multi-agent framework that transforms sparse CVE metadata into executable agentic code-security tasks. I contributed to data-quality auditing, the false-positive taxonomy, and LLM-as-Judge automatic auditing.",
 		},
@@ -44,8 +43,7 @@ export const homepage = {
 			title:
 				"Socratic-SWE: Self-Evolving Coding Agents via Trace-Derived Agent Skills",
 			venue: "EMNLP 2026 Under Review",
-			authors:
-				"Chuan Xiao*, Zhengbo Jiao*, Shaobo Wang, Wei Wang, Bing Zhao, Hu Wei, Linfeng Zhang, Lin Qu",
+			authors: "First-author research project",
 			description:
 				"A closed-loop self-evolution framework for software engineering agents that extracts reusable skills from solving traces and uses them for dynamic curriculum generation.",
 		},
