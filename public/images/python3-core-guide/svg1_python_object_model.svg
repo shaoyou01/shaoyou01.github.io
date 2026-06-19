@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480" font-family="Segoe UI, sans-serif">
+  <defs>
+    <marker id="ah1" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#3b82f6"/></marker>
+    <filter id="s1"><feGaussianBlur in="SourceAlpha" stdDeviation="2"/><feOffset dx="1" dy="2" result="o"/><feComponentTransfer><feFuncA type="linear" slope="0.08"/></feComponentTransfer><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="900" height="480" fill="#fafbfc" rx="8"/>
+  <text x="450" y="38" text-anchor="middle" font-size="18" font-weight="700" fill="#1e40af">Python 对象模型：变量是标签，对象是实体</text>
+  <line x1="140" y1="50" x2="760" y2="50" stroke="#e5e7eb" stroke-width="1"/>
+
+  <rect x="40" y="70" width="380" height="180" rx="8" fill="#f0f4ff" stroke="#1e40af" stroke-width="1.5" filter="url(#s1)"/>
+  <text x="230" y="98" text-anchor="middle" font-size="15" font-weight="700" fill="#1e40af">不可变对象 (int, str, tuple)</text>
+  <rect x="70" y="120" width="80" height="36" rx="6" fill="#dbeafe" stroke="#1e40af" stroke-width="1.5"/>
+  <text x="110" y="143" text-anchor="middle" font-size="13" font-weight="600" fill="#1e40af">a</text>
+  <rect x="240" y="115" width="80" height="46" rx="10" fill="#1e40af"/><text x="280" y="143" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">10</text>
+  <text x="280" y="175" text-anchor="middle" font-size="10" fill="#6b7280">id: 0x7f01</text>
+  <line x1="150" y1="138" x2="235" y2="138" stroke="#3b82f6" stroke-width="2" marker-end="url(#ah1)"/>
+
+  <text x="110" y="200" text-anchor="middle" font-size="11" fill="#6b7280">a = 20 后</text>
+  <rect x="70" y="208" width="80" height="36" rx="6" fill="#dbeafe" stroke="#1e40af" stroke-width="1.5"/>
+  <text x="110" y="231" text-anchor="middle" font-size="13" font-weight="600" fill="#1e40af">a</text>
+  <rect x="240" y="203" width="80" height="46" rx="10" fill="#10b981"/><text x="280" y="231" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">20</text>
+  <text x="280" y="263" text-anchor="middle" font-size="10" fill="#6b7280">id: 0x7f02</text>
+  <line x1="150" y1="226" x2="235" y2="226" stroke="#10b981" stroke-width="2" marker-end="url(#ah1)"/>
+  <rect x="350" y="203" width="55" height="36" rx="8" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="377" y="225" text-anchor="middle" font-size="12" fill="#9ca3af">10</text>
+  <text x="377" y="253" text-anchor="middle" font-size="9" fill="#9ca3af">被回收</text>
+
+  <rect x="480" y="70" width="380" height="180" rx="8" fill="#f0fdf4" stroke="#10b981" stroke-width="1.5" filter="url(#s1)"/>
+  <text x="670" y="98" text-anchor="middle" font-size="15" font-weight="700" fill="#10b981">可变对象 (list, dict, set)</text>
+  <rect x="510" y="120" width="80" height="36" rx="6" fill="#d1fae5" stroke="#10b981" stroke-width="1.5"/>
+  <text x="550" y="143" text-anchor="middle" font-size="13" font-weight="600" fill="#10b981">b</text>
+  <rect x="680" y="110" width="140" height="56" rx="10" fill="#10b981"/><text x="750" y="135" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">[1, 2, 3]</text>
+  <text x="750" y="155" text-anchor="middle" font-size="10" fill="#d1fae5">id: 0x8a01</text>
+  <line x1="590" y1="138" x2="675" y2="138" stroke="#10b981" stroke-width="2" marker-end="url(#ah1)"/>
+
+  <text x="550" y="200" text-anchor="middle" font-size="11" fill="#6b7280">b.append(4) 后</text>
+  <rect x="510" y="208" width="80" height="36" rx="6" fill="#d1fae5" stroke="#10b981" stroke-width="1.5"/>
+  <text x="550" y="231" text-anchor="middle" font-size="13" font-weight="600" fill="#10b981">b</text>
+  <rect x="680" y="198" width="140" height="56" rx="10" fill="#10b981"/><text x="750" y="223" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">[1, 2, 3, 4]</text>
+  <text x="750" y="243" text-anchor="middle" font-size="10" fill="#d1fae5">id: 0x8a01 ✓</text>
+  <line x1="590" y1="226" x2="675" y2="226" stroke="#10b981" stroke-width="2" marker-end="url(#ah1)"/>
+
+  <rect x="40" y="280" width="820" height="60" rx="8" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="450" y="305" text-anchor="middle" font-size="14" font-weight="700" fill="#f59e0b">核心区别</text>
+  <text x="230" y="328" text-anchor="middle" font-size="12" fill="#374151">不可变：重新赋值 = 标签指向新对象</text>
+  <text x="670" y="328" text-anchor="middle" font-size="12" fill="#374151">可变：修改操作 = 原地修改同一对象</text>
+
+  <rect x="40" y="360" width="820" height="100" rx="8" fill="#fef2f2" stroke="#ef4444" stroke-width="1"/>
+  <text x="450" y="388" text-anchor="middle" font-size="14" font-weight="700" fill="#ef4444">⚠ 开发最佳实践</text>
+  <text x="450" y="412" text-anchor="middle" font-size="12" fill="#374151">函数参数传递可变对象时，函数内部的修改会影响外部变量</text>
+  <text x="450" y="432" text-anchor="middle" font-size="12" fill="#374151">防御性编程：def process(data: list) → 内部使用 data.copy() 或 data[:] 避免副作用</text>
+  <text x="450" y="452" text-anchor="middle" font-size="12" fill="#6b7280">使用 id() 函数可以验证变量是否指向同一对象</text>
+</svg>

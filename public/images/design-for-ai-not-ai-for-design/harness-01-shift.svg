@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f7f2e8"/>
+      <stop offset="100%" stop-color="#efe7d7"/>
+    </linearGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M 48 0 L 0 0 0 48" fill="none" stroke="#d7ccba" stroke-width="1"/>
+    </pattern>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#1f3344" flood-opacity="0.12"/>
+    </filter>
+    <style><![CDATA[
+      .title{font-family:'Noto Serif SC','Source Han Serif SC','Songti SC',serif;font-size:54px;font-weight:700;fill:#18384d}
+      .kicker{font-family:'JetBrains Mono','Fira Code','Cascadia Code',monospace;font-size:18px;letter-spacing:2px;fill:#a15d2d}
+      .label{font-family:'JetBrains Mono','Fira Code','Cascadia Code',monospace;font-size:14px;letter-spacing:1.5px;fill:#5e6d78}
+      .cardTitle{font-family:'Noto Serif SC','Source Han Serif SC','Songti SC',serif;font-size:32px;font-weight:700;fill:#18384d}
+      .body{font-family:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:24px;fill:#304754}
+      .statNum{font-family:'Noto Serif SC','Source Han Serif SC','Songti SC',serif;font-size:30px;font-weight:700;fill:#18384d}
+      .statText{font-family:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:16px;fill:#5e6d78}
+    ]]></style>
+  </defs>
+
+  <rect width="1440" height="900" fill="url(#bg)"/>
+  <rect width="1440" height="900" fill="url(#grid)" opacity="0.55"/>
+
+  <text x="92" y="98" class="kicker">HARNESS ENGINEERING / STRUCTURAL SHIFT</text>
+  <text x="92" y="168" class="title">从 code-first 到 harness-first</text>
+  <text x="94" y="208" class="body">
+    <tspan x="94" dy="0">工程师没有离开，只是把主要工作从“写出代码”</tspan>
+    <tspan x="94" dy="30">转向“设计 agent 稳定工作的支架”。</tspan>
+  </text>
+
+  <g filter="url(#shadow)">
+    <rect x="90" y="282" width="530" height="392" rx="26" fill="#fbf8f1" stroke="#cfbea8" stroke-width="2.5"/>
+    <rect x="820" y="282" width="530" height="392" rx="26" fill="#fffaf1" stroke="#c7b79e" stroke-width="2.5"/>
+  </g>
+
+  <text x="130" y="338" class="label">OLD DEFAULT</text>
+  <text x="130" y="382" class="cardTitle">Code-first</text>
+  <text x="130" y="438" class="body">工程师主要盯着单个函数和单次提交。</text>
+  <text x="130" y="486" class="body">代码产出慢，所以审查和合并都围着“写”打转。</text>
+  <text x="130" y="534" class="body">规范大多靠人记忆，坏味道出现得慢，扩散得也慢。</text>
+  <text x="130" y="582" class="body">仓库更像存放代码的地方，不像面向 agent 的工作环境。</text>
+
+  <text x="860" y="338" class="label">NEW CONSTRAINT</text>
+  <text x="860" y="382" class="cardTitle">Harness-first</text>
+  <text x="860" y="438" class="body">生成速度不再稀缺，验证、上下文和规则开始变贵。</text>
+  <text x="860" y="486" class="body">工程师设计浏览器、日志、测试、文档和 lint 这套支架。</text>
+  <text x="860" y="534" class="body">规则写进仓库，边界写进系统，反馈回路写进流水线。</text>
+  <text x="860" y="582" class="body">仓库本身变成 agent 可以读、可以走、可以自校验的地图。</text>
+
+  <path d="M 660 478 C 712 424, 758 424, 790 478 C 758 532, 712 532, 660 478 Z" fill="#18384d" opacity="0.08"/>
+  <path d="M 654 478 H 786" stroke="#a15d2d" stroke-width="4" stroke-linecap="round"/>
+  <path d="M 760 455 L 792 478 L 760 501" fill="none" stroke="#a15d2d" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="674" y="445" class="label">SHIFT</text>
+
+  <g>
+    <rect x="94" y="730" width="260" height="106" rx="20" fill="#f9f4ea" stroke="#cfbea8" stroke-width="2"/>
+    <rect x="374" y="730" width="260" height="106" rx="20" fill="#f9f4ea" stroke="#cfbea8" stroke-width="2"/>
+    <rect x="654" y="730" width="260" height="106" rx="20" fill="#f9f4ea" stroke="#cfbea8" stroke-width="2"/>
+    <rect x="934" y="730" width="260" height="106" rx="20" fill="#f9f4ea" stroke="#cfbea8" stroke-width="2"/>
+
+    <text x="126" y="782" class="statNum">5 个月</text>
+    <text x="126" y="812" class="statText">从空仓库做到内部 beta</text>
+
+    <text x="406" y="782" class="statNum">约 100 万行</text>
+    <text x="406" y="812" class="statText">文章给出的代码规模</text>
+
+    <text x="686" y="782" class="statNum">约 1500 个 PR</text>
+    <text x="686" y="812" class="statText">高吞吐协作成为新常态</text>
+
+    <text x="966" y="782" class="statNum">0 行手写</text>
+    <text x="966" y="812" class="statText">人工代码被刻意设为约束</text>
+  </g>
+</svg>

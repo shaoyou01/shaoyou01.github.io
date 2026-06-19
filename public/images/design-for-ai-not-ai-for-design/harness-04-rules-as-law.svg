@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8f3ea"/>
+      <stop offset="100%" stop-color="#eee6d7"/>
+    </linearGradient>
+    <pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse">
+      <path d="M 44 0 L 0 0 0 44" fill="none" stroke="#d8cfbe" stroke-width="1"/>
+    </pattern>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#163246" flood-opacity="0.14"/>
+    </filter>
+    <style><![CDATA[
+      .title{font-family:'Noto Serif SC','Source Han Serif SC','Songti SC',serif;font-size:52px;font-weight:700;fill:#18384d}
+      .kicker{font-family:'JetBrains Mono','Fira Code','Cascadia Code',monospace;font-size:18px;letter-spacing:2px;fill:#a15d2d}
+      .big{font-family:'Noto Serif SC','Source Han Serif SC','Songti SC',serif;font-size:26px;font-weight:700;fill:#18384d}
+      .body{font-family:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:21px;fill:#314755}
+      .label{font-family:'JetBrains Mono','Fira Code','Cascadia Code',monospace;font-size:14px;letter-spacing:1.2px;fill:#5e6d78}
+    ]]></style>
+  </defs>
+
+  <rect width="1440" height="900" fill="url(#bg)"/>
+  <rect width="1440" height="900" fill="url(#grid)" opacity="0.58"/>
+
+  <text x="92" y="94" class="kicker">RULES / LAYERS / ENFORCEMENT</text>
+  <text x="92" y="150" class="title">
+    <tspan x="92" dy="0">工程品味要写成法律，</tspan>
+    <tspan x="92" dy="56">不能只写成口号</tspan>
+  </text>
+
+  <g filter="url(#shadow)">
+    <rect x="112" y="238" width="750" height="500" rx="28" fill="#fbf8f1" stroke="#c9baa4" stroke-width="2.4"/>
+    <rect x="960" y="254" width="310" height="136" rx="22" fill="#fffaf2" stroke="#d0c0a9" stroke-width="2"/>
+    <rect x="960" y="420" width="310" height="136" rx="22" fill="#fffaf2" stroke="#d0c0a9" stroke-width="2"/>
+    <rect x="960" y="586" width="310" height="136" rx="22" fill="#fffaf2" stroke="#d0c0a9" stroke-width="2"/>
+  </g>
+
+  <g>
+    <rect x="152" y="286" width="670" height="56" rx="16" fill="#22445e"/>
+    <rect x="152" y="352" width="670" height="56" rx="16" fill="#305973"/>
+    <rect x="152" y="418" width="670" height="56" rx="16" fill="#3d6d88"/>
+    <rect x="152" y="484" width="670" height="56" rx="16" fill="#4d7f98"/>
+    <rect x="152" y="550" width="670" height="56" rx="16" fill="#5e91a9"/>
+    <rect x="152" y="616" width="670" height="56" rx="16" fill="#73a4bb"/>
+
+    <text x="184" y="323" class="big" fill="#f7f6f2">Type &amp; Contract</text>
+    <text x="184" y="389" class="big" fill="#f7f6f2">Config &amp; Schema</text>
+    <text x="184" y="455" class="big" fill="#f7f6f2">Data Access</text>
+    <text x="184" y="521" class="big" fill="#f7f6f2">Service Layer</text>
+    <text x="184" y="587" class="big" fill="#f7f6f2">Runtime / Worker</text>
+    <text x="184" y="653" class="big" fill="#f7f6f2">Frontend / UI</text>
+  </g>
+
+  <text x="990" y="300" class="label">GATE 01</text>
+  <text x="990" y="338" class="big">Linter</text>
+  <text x="990" y="368" class="body">把“建议”写成即时错误</text>
+
+  <text x="990" y="466" class="label">GATE 02</text>
+  <text x="990" y="504" class="big">Structure tests</text>
+  <text x="990" y="534" class="body">检查目录、边界和依赖方向</text>
+
+  <text x="990" y="632" class="label">GATE 03</text>
+  <text x="990" y="670" class="big">Shared interfaces</text>
+  <text x="990" y="700" class="body">统一入口，减少自由发挥</text>
+
+  <path d="M 822 314 H 950" stroke="#a15d2d" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M 822 446 H 950" stroke="#a15d2d" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M 822 642 H 950" stroke="#a15d2d" stroke-width="3.5" stroke-linecap="round"/>
+
+  <text x="112" y="788" class="body">
+    <tspan x="112" dy="0">规则对人类像负担，对 agent 像扶手。</tspan>
+    <tspan x="112" dy="30">仓库里真正该被放大的，不是临场发挥，而是已经被写死的好约束。</tspan>
+  </text>
+</svg>

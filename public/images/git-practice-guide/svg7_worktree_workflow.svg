@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" font-family="Segoe UI, sans-serif">
+  <defs>
+    <filter id="s7" x="-4%" y="-4%" width="110%" height="116%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
+      <feOffset dx="1" dy="2" result="offsetblur"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.08"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="a7" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#3b82f6"/>
+    </marker>
+  </defs>
+  <rect width="900" height="560" fill="#fafbfc" rx="8"/>
+
+  <text x="450" y="36" text-anchor="middle" font-size="18" font-weight="700" fill="#1e40af">worktree &#x5B9E;&#x6218;&#x573A;&#x666F;&#xFF1A;&#x5E76;&#x884C;&#x5F00;&#x53D1;&#x5DE5;&#x4F5C;&#x6D41;</text>
+  <line x1="160" y1="48" x2="740" y2="48" stroke="#e5e7eb" stroke-width="1"/>
+
+  <line x1="80" y1="90" x2="820" y2="90" stroke="#e5e7eb" stroke-width="2"/>
+  <text x="40" y="94" font-size="10" fill="#6b7280">&#x65F6;&#x95F4;</text>
+  <circle cx="150" cy="90" r="4" fill="#1e40af"/>
+  <text x="150" y="80" text-anchor="middle" font-size="9" fill="#6b7280">T1</text>
+  <circle cx="350" cy="90" r="4" fill="#1e40af"/>
+  <text x="350" y="80" text-anchor="middle" font-size="9" fill="#6b7280">T2</text>
+  <circle cx="550" cy="90" r="4" fill="#1e40af"/>
+  <text x="550" y="80" text-anchor="middle" font-size="9" fill="#6b7280">T3</text>
+  <circle cx="750" cy="90" r="4" fill="#1e40af"/>
+  <text x="750" y="80" text-anchor="middle" font-size="9" fill="#6b7280">T4</text>
+
+  <rect x="30" y="110" width="840" height="170" rx="8" fill="#fef2f2" stroke="#ef4444" stroke-width="1" opacity="0.4"/>
+  <text x="50" y="135" font-size="13" font-weight="700" fill="#ef4444">&#x4F20;&#x7EDF;&#x65B9;&#x5F0F;&#xFF08;&#x65E0; worktree&#xFF09;</text>
+
+  <rect x="80" y="150" width="160" height="50" rx="6" fill="#d1fae5" stroke="#10b981" stroke-width="1.5" filter="url(#s7)"/>
+  <text x="160" y="172" text-anchor="middle" font-size="10" font-weight="600" fill="#10b981">&#x5F00;&#x53D1; feature</text>
+  <text x="160" y="188" text-anchor="middle" font-size="9" fill="#6b7280">&#x5199;&#x4E86;&#x4E00;&#x534A;...</text>
+
+  <rect x="260" y="150" width="160" height="50" rx="6" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5" filter="url(#s7)"/>
+  <text x="340" y="172" text-anchor="middle" font-size="10" font-weight="600" fill="#f59e0b">git stash</text>
+  <text x="340" y="188" text-anchor="middle" font-size="9" fill="#6b7280">&#x6682;&#x5B58;&#x672A;&#x5B8C;&#x6210;&#x7684;&#x5DE5;&#x4F5C;</text>
+
+  <rect x="440" y="150" width="160" height="50" rx="6" fill="#fef2f2" stroke="#ef4444" stroke-width="1.5" filter="url(#s7)"/>
+  <text x="520" y="172" text-anchor="middle" font-size="10" font-weight="600" fill="#ef4444">&#x5207;&#x5230; hotfix &#x4FEE; bug</text>
+  <text x="520" y="188" text-anchor="middle" font-size="9" fill="#6b7280">checkout + &#x4FEE;&#x590D; + push</text>
+
+  <rect x="620" y="150" width="160" height="50" rx="6" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5" filter="url(#s7)"/>
+  <text x="700" y="172" text-anchor="middle" font-size="10" font-weight="600" fill="#f59e0b">git stash pop</text>
+  <text x="700" y="188" text-anchor="middle" font-size="9" fill="#6b7280">&#x6062;&#x590D; + &#x53EF;&#x80FD;&#x51B2;&#x7A81;</text>
+
+  <line x1="240" y1="175" x2="255" y2="175" stroke="#374151" stroke-width="1.5" marker-end="url(#a7)"/>
+  <line x1="420" y1="175" x2="435" y2="175" stroke="#374151" stroke-width="1.5" marker-end="url(#a7)"/>
+  <line x1="600" y1="175" x2="615" y2="175" stroke="#374151" stroke-width="1.5" marker-end="url(#a7)"/>
+
+  <text x="160" y="225" text-anchor="middle" font-size="10" fill="#ef4444">&#x4E0A;&#x4E0B;&#x6587;&#x4E22;&#x5931;</text>
+  <text x="340" y="225" text-anchor="middle" font-size="10" fill="#ef4444">stash &#x53EF;&#x80FD;&#x51B2;&#x7A81;</text>
+  <text x="520" y="225" text-anchor="middle" font-size="10" fill="#ef4444">&#x6784;&#x5EFA;&#x7F13;&#x5B58;&#x5931;&#x6548;</text>
+  <text x="700" y="225" text-anchor="middle" font-size="10" fill="#ef4444">&#x5FC3;&#x667A;&#x8D1F;&#x62C5;&#x91CD;</text>
+
+  <rect x="30" y="290" width="840" height="170" rx="8" fill="#f0fdf4" stroke="#10b981" stroke-width="1" opacity="0.4"/>
+  <text x="50" y="315" font-size="13" font-weight="700" fill="#10b981">worktree &#x65B9;&#x5F0F;</text>
+
+  <rect x="80" y="330" width="700" height="44" rx="6" fill="#d1fae5" stroke="#10b981" stroke-width="1.5" filter="url(#s7)"/>
+  <text x="430" y="348" text-anchor="middle" font-size="11" font-weight="600" fill="#10b981">~/project/ &#x2014; &#x7EE7;&#x7EED;&#x5F00;&#x53D1; feature&#xFF0C;&#x5B8C;&#x5168;&#x4E0D;&#x53D7;&#x5E72;&#x6270;</text>
+  <text x="430" y="364" text-anchor="middle" font-size="9" fill="#6b7280">IDE &#x7A97;&#x53E3; 1 &#x4FDD;&#x6301;&#x6253;&#x5F00;&#xFF0C;&#x6784;&#x5EFA;&#x7F13;&#x5B58;&#x5B8C;&#x597D;</text>
+
+  <rect x="260" y="390" width="340" height="44" rx="6" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5" filter="url(#s7)"/>
+  <text x="430" y="408" text-anchor="middle" font-size="11" font-weight="600" fill="#f59e0b">~/project-hotfix/ &#x2014; &#x5E76;&#x884C;&#x4FEE;&#x590D; bug</text>
+  <text x="430" y="424" text-anchor="middle" font-size="9" fill="#6b7280">IDE &#x7A97;&#x53E3; 2&#xFF0C;&#x72EC;&#x7ACB;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;</text>
+
+  <text x="810" y="370" font-size="24" fill="#10b981" font-weight="700">||</text>
+  <text x="810" y="390" font-size="9" fill="#10b981">&#x5E76;&#x884C;</text>
+
+  <text x="160" y="455" text-anchor="middle" font-size="10" fill="#10b981" font-weight="600">&#x96F6;&#x4E0A;&#x4E0B;&#x6587;&#x5207;&#x6362;</text>
+  <text x="340" y="455" text-anchor="middle" font-size="10" fill="#10b981" font-weight="600">&#x65E0; stash &#x98CE;&#x9669;</text>
+  <text x="520" y="455" text-anchor="middle" font-size="10" fill="#10b981" font-weight="600">&#x6784;&#x5EFA;&#x7F13;&#x5B58;&#x72EC;&#x7ACB;</text>
+  <text x="700" y="455" text-anchor="middle" font-size="10" fill="#10b981" font-weight="600">&#x5FC3;&#x667A;&#x8D1F;&#x62C5;&#x4F4E;</text>
+
+  <rect x="40" y="475" width="820" height="70" rx="8" fill="#fff" stroke="#1e40af" stroke-width="1" filter="url(#s7)"/>
+  <text x="450" y="498" text-anchor="middle" font-size="12" font-weight="700" fill="#1e40af">&#x5FEB;&#x901F;&#x4E0A;&#x624B;</text>
+  <text x="120" y="520" font-size="10" fill="#374151" font-family="Consolas, monospace">git worktree add ../project-hotfix hotfix</text>
+  <text x="500" y="520" font-size="10" fill="#6b7280">&#x521B;&#x5EFA;</text>
+  <text x="120" y="536" font-size="10" fill="#374151" font-family="Consolas, monospace">git worktree remove ../project-hotfix</text>
+  <text x="500" y="536" font-size="10" fill="#6b7280">&#x5B8C;&#x6210;&#x540E;&#x6E05;&#x7406;</text>
+  <text x="560" y="520" font-size="10" fill="#374151" font-family="Consolas, monospace">git worktree list</text>
+  <text x="760" y="520" font-size="10" fill="#6b7280">&#x67E5;&#x770B;&#x6240;&#x6709;</text>
+  <text x="560" y="536" font-size="10" fill="#374151" font-family="Consolas, monospace">git worktree prune</text>
+  <text x="760" y="536" font-size="10" fill="#6b7280">&#x6E05;&#x7406;&#x5931;&#x6548;&#x5F15;&#x7528;</text>

@@ -1,0 +1,50 @@
+---
+import { homepage } from "../data/homepage";
+import { siteConfig } from "../config";
+import "../styles/simple-site.css";
+
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const { title, description } = Astro.props;
+const pageTitle = title ? `${title} - ${homepage.siteName}` : homepage.siteName;
+const pageDescription = description || siteConfig.subtitle;
+const pathname = Astro.url.pathname;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content={pageDescription} />
+		<meta name="author" content={homepage.name} />
+		<meta property="og:site_name" content={homepage.siteName} />
+		<meta property="og:title" content={pageTitle} />
+		<meta property="og:description" content={pageDescription} />
+		<meta property="og:type" content="website" />
+		<title>{pageTitle}</title>
+	</head>
+	<body>
+		<header class="site-header">
+			<a class="brand" href="/" aria-label="shaoyou homepage">
+				<span class="brand-mark">s</span>
+				<span>{homepage.siteName}</span>
+			</a>
+			<nav class="site-nav" aria-label="Primary navigation">
+				<a class:list={[{ active: pathname === "/" }]} href="/">homepage</a>
+				<a class:list={[{ active: pathname.startsWith("/blogs") }]} href="/blogs/">blogs</a>
+			</nav>
+		</header>
+		<main>
+			<slot />
+		</main>
+		<footer class="site-footer">
+			<span>{homepage.name}</span>
+			<span>Data-centric AI / Code agents / Code security</span>
+		</footer>
+	</body>
+</html>

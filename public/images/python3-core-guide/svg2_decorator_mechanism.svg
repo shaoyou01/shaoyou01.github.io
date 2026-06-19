@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" font-family="Segoe UI, sans-serif">
+  <defs>
+    <marker id="ah2" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#3b82f6"/></marker>
+    <marker id="ah2g" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#10b981"/></marker>
+    <filter id="s2"><feGaussianBlur in="SourceAlpha" stdDeviation="2"/><feOffset dx="1" dy="2" result="o"/><feComponentTransfer><feFuncA type="linear" slope="0.08"/></feComponentTransfer><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="900" height="560" fill="#fafbfc" rx="8"/>
+  <text x="450" y="38" text-anchor="middle" font-size="18" font-weight="700" fill="#1e40af">装饰器执行机制：从语法糖到运行时</text>
+  <line x1="160" y1="50" x2="740" y2="50" stroke="#e5e7eb" stroke-width="1"/>
+
+  <rect x="30" y="70" width="410" height="220" rx="8" fill="#f0f4ff" stroke="#1e40af" stroke-width="1.5" filter="url(#s2)"/>
+  <text x="235" y="98" text-anchor="middle" font-size="15" font-weight="700" fill="#1e40af">① 定义阶段（装配时）</text>
+  <rect x="55" y="115" width="160" height="36" rx="6" fill="#dbeafe" stroke="#1e40af" stroke-width="1.5"/>
+  <text x="135" y="138" text-anchor="middle" font-size="12" font-weight="600" fill="#1e40af">@my_decorator</text>
+  <rect x="55" y="160" width="160" height="36" rx="6" fill="#dbeafe" stroke="#1e40af" stroke-width="1.5"/>
+  <text x="135" y="183" text-anchor="middle" font-size="12" font-weight="600" fill="#1e40af">def say_hello():</text>
+  <text x="250" y="165" text-anchor="middle" font-size="20" font-weight="700" fill="#6b7280">＝</text>
+  <rect x="275" y="135" width="150" height="46" rx="6" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="350" y="155" text-anchor="middle" font-size="11" font-weight="600" fill="#f59e0b">say_hello =</text>
+  <text x="350" y="172" text-anchor="middle" font-size="11" font-weight="600" fill="#f59e0b">my_decorator(say_hello)</text>
+  <rect x="55" y="210" width="370" height="65" rx="6" fill="#fff" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="240" y="232" text-anchor="middle" font-size="11" fill="#374151">my_decorator 接收原函数 → 返回 wrapper</text>
+  <text x="240" y="252" text-anchor="middle" font-size="11" fill="#374151">say_hello 这个名字从此指向 wrapper 函数</text>
+  <text x="240" y="268" text-anchor="middle" font-size="10" fill="#ef4444">⚠ 此时装饰器的外层代码已经执行！</text>
+
+  <rect x="460" y="70" width="410" height="220" rx="8" fill="#f0fdf4" stroke="#10b981" stroke-width="1.5" filter="url(#s2)"/>
+  <text x="665" y="98" text-anchor="middle" font-size="15" font-weight="700" fill="#10b981">② 调用阶段（运行时）</text>
+  <rect x="485" y="120" width="130" height="36" rx="6" fill="#d1fae5" stroke="#10b981" stroke-width="1.5"/>
+  <text x="550" y="143" text-anchor="middle" font-size="12" font-weight="600" fill="#10b981">say_hello()</text>
+  <line x1="615" y1="138" x2="660" y2="138" stroke="#10b981" stroke-width="2" marker-end="url(#ah2g)"/>
+  <rect x="665" y="120" width="130" height="36" rx="6" fill="#10b981"/><text x="730" y="143" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">wrapper()</text>
+  <rect x="485" y="175" width="360" height="100" rx="6" fill="#fff" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="500" y="196" font-size="11" fill="#6b7280">def wrapper(*args, **kwargs):</text>
+  <text x="520" y="216" font-size="11" fill="#10b981">    # 前置逻辑（日志、计时、权限...）</text>
+  <text x="520" y="236" font-size="11" font-weight="600" fill="#1e40af">    result = func(*args, **kwargs)</text>
+  <text x="520" y="256" font-size="11" fill="#10b981">    # 后置逻辑（清理、记录...）</text>
+  <text x="520" y="270" font-size="11" fill="#374151">    return result</text>
+
+  <rect x="30" y="310" width="840" height="110" rx="8" fill="#fef2f2" stroke="#ef4444" stroke-width="1.5" filter="url(#s2)"/>
+  <text x="450" y="338" text-anchor="middle" font-size="15" font-weight="700" fill="#ef4444">③ 带参数的装饰器（三层嵌套）</text>
+  <rect x="55" y="355" width="140" height="50" rx="6" fill="#fecaca" stroke="#ef4444" stroke-width="1.5"/>
+  <text x="125" y="375" text-anchor="middle" font-size="11" font-weight="600" fill="#ef4444">@Retry(max=3)</text>
+  <text x="125" y="395" text-anchor="middle" font-size="10" fill="#6b7280">外层：接收参数</text>
+  <line x1="200" y1="380" x2="260" y2="380" stroke="#ef4444" stroke-width="1.5" marker-end="url(#ah2)"/>
+  <rect x="265" y="355" width="160" height="50" rx="6" fill="#fecaca" stroke="#ef4444" stroke-width="1.5"/>
+  <text x="345" y="375" text-anchor="middle" font-size="11" font-weight="600" fill="#ef4444">__call__(func)</text>
+  <text x="345" y="395" text-anchor="middle" font-size="10" fill="#6b7280">中层：接收函数</text>
+  <line x1="430" y1="380" x2="490" y2="380" stroke="#ef4444" stroke-width="1.5" marker-end="url(#ah2)"/>
+  <rect x="495" y="355" width="160" height="50" rx="6" fill="#fecaca" stroke="#ef4444" stroke-width="1.5"/>
+  <text x="575" y="375" text-anchor="middle" font-size="11" font-weight="600" fill="#ef4444">wrapper(*args)</text>
+  <text x="575" y="395" text-anchor="middle" font-size="10" fill="#6b7280">内层：替代原函数</text>
+  <line x1="660" y1="380" x2="720" y2="380" stroke="#ef4444" stroke-width="1.5" marker-end="url(#ah2)"/>
+  <rect x="725" y="360" width="120" height="40" rx="20" fill="#ef4444"/><text x="785" y="385" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">执行结果</text>
+
+  <rect x="30" y="440" width="840" height="100" rx="8" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="450" y="468" text-anchor="middle" font-size="14" font-weight="700" fill="#f59e0b">开发最佳实践</text>
+  <text x="450" y="492" text-anchor="middle" font-size="12" fill="#374151">① 始终使用 @functools.wraps(func) 保留原函数的 __name__ 和 __doc__</text>
+  <text x="450" y="512" text-anchor="middle" font-size="12" fill="#374151">② 通用装饰器的 wrapper 必须接受 *args, **kwargs 以兼容任意签名</text>
+  <text x="450" y="532" text-anchor="middle" font-size="12" fill="#374151">③ 常见场景：日志记录、性能计时、权限校验、重试机制、缓存（@lru_cache）</text>
+</svg>

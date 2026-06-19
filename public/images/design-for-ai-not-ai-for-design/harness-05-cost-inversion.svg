@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f7f2e8"/>
+      <stop offset="100%" stop-color="#ede4d4"/>
+    </linearGradient>
+    <pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse">
+      <path d="M 44 0 L 0 0 0 44" fill="none" stroke="#d8cfbe" stroke-width="1"/>
+    </pattern>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#163246" flood-opacity="0.14"/>
+    </filter>
+    <style><![CDATA[
+      .title{font-family:'Noto Serif SC','Source Han Serif SC','Songti SC',serif;font-size:52px;font-weight:700;fill:#18384d}
+      .kicker{font-family:'JetBrains Mono','Fira Code','Cascadia Code',monospace;font-size:18px;letter-spacing:2px;fill:#a15d2d}
+      .big{font-family:'Noto Serif SC','Source Han Serif SC','Songti SC',serif;font-size:28px;font-weight:700;fill:#18384d}
+      .body{font-family:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:22px;fill:#314755}
+      .label{font-family:'JetBrains Mono','Fira Code','Cascadia Code',monospace;font-size:14px;letter-spacing:1.2px;fill:#5e6d78}
+    ]]></style>
+  </defs>
+
+  <rect width="1440" height="900" fill="url(#bg)"/>
+  <rect width="1440" height="900" fill="url(#grid)" opacity="0.58"/>
+
+  <text x="92" y="94" class="kicker">WORKFLOW / COST INVERSION</text>
+  <text x="92" y="150" class="title">
+    <tspan x="92" dy="0">agent 时代，</tspan>
+    <tspan x="92" dy="56">最贵的成本开始变成“等待”</tspan>
+  </text>
+
+  <g filter="url(#shadow)">
+    <rect x="100" y="236" width="560" height="522" rx="28" fill="#fbf8f1" stroke="#c8b8a2" stroke-width="2.4"/>
+    <rect x="780" y="236" width="560" height="522" rx="28" fill="#fffaf2" stroke="#c8b8a2" stroke-width="2.4"/>
+  </g>
+
+  <text x="136" y="294" class="label">OLD COST MODEL</text>
+  <text x="136" y="336" class="big">传统团队</text>
+  <text x="166" y="430" class="body">写代码</text>
+  <rect x="304" y="396" width="286" height="44" rx="14" fill="#234761"/>
+  <text x="166" y="520" class="body">等待合并</text>
+  <rect x="304" y="486" width="148" height="44" rx="14" fill="#6d93ab"/>
+  <text x="166" y="610" class="body">修复问题</text>
+  <rect x="304" y="576" width="248" height="44" rx="14" fill="#3f6f89"/>
+  <text x="166" y="690" class="body">默认策略：慢写，慢看，慢合并</text>
+
+  <text x="816" y="294" class="label">NEW COST MODEL</text>
+  <text x="816" y="336" class="big">agent 团队</text>
+  <text x="846" y="430" class="body">生成代码</text>
+  <rect x="984" y="396" width="116" height="44" rx="14" fill="#6d93ab"/>
+  <text x="846" y="520" class="body">等待反馈</text>
+  <rect x="984" y="486" width="302" height="44" rx="14" fill="#234761"/>
+  <text x="846" y="610" class="body">修复问题</text>
+  <rect x="984" y="576" width="132" height="44" rx="14" fill="#8caa64"/>
+  <text x="846" y="690" class="body">默认策略：小 PR，快放行，快返工</text>
+
+  <path d="M 674 496 H 762" stroke="#a15d2d" stroke-width="4" stroke-linecap="round"/>
+  <path d="M 734 472 L 766 496 L 734 520" fill="none" stroke="#a15d2d" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <text x="92" y="804" class="body">
+    <tspan x="92" dy="0">速度本身不是答案。只有在验证和护栏足够强的时候，</tspan>
+    <tspan x="92" dy="30">快合并才会带来净收益，否则它只是更快地传播混乱。</tspan>
+  </text>
+</svg>

@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" font-family="Segoe UI, sans-serif">
+  <defs>
+    <marker id="ah1" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#3b82f6"/>
+    </marker>
+    <filter id="shadow1">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
+      <feOffset dx="1" dy="2" result="offsetblur"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.08"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="900" height="520" fill="#fafbfc" rx="8"/>
+
+  <!-- Title -->
+  <text x="450" y="38" text-anchor="middle" font-size="18" font-weight="700" fill="#1e40af">Git 分支工作流全景</text>
+  <line x1="180" y1="50" x2="720" y2="50" stroke="#e5e7eb" stroke-width="1"/>
+
+  <!-- main branch line -->
+  <line x1="80" y1="140" x2="820" y2="140" stroke="#1e40af" stroke-width="3"/>
+  <text x="40" y="145" font-size="13" font-weight="600" fill="#1e40af">main</text>
+
+  <!-- Commits on main -->
+  <circle cx="140" cy="140" r="14" fill="#dbeafe" stroke="#1e40af" stroke-width="2" filter="url(#shadow1)"/>
+  <text x="140" y="144" text-anchor="middle" font-size="10" font-weight="600" fill="#1e40af">C0</text>
+
+  <circle cx="260" cy="140" r="14" fill="#dbeafe" stroke="#1e40af" stroke-width="2" filter="url(#shadow1)"/>
+  <text x="260" y="144" text-anchor="middle" font-size="10" font-weight="600" fill="#1e40af">C1</text>
+
+  <circle cx="500" cy="140" r="14" fill="#dbeafe" stroke="#1e40af" stroke-width="2" filter="url(#shadow1)"/>
+  <text x="500" y="144" text-anchor="middle" font-size="10" font-weight="600" fill="#1e40af">C4</text>
+
+  <circle cx="700" cy="140" r="14" fill="#dbeafe" stroke="#1e40af" stroke-width="2" filter="url(#shadow1)"/>
+  <text x="700" y="144" text-anchor="middle" font-size="10" font-weight="600" fill="#1e40af">M</text>
+  <text x="700" y="118" text-anchor="middle" font-size="10" fill="#6b7280">merge commit</text>
+
+  <circle cx="800" cy="140" r="14" fill="#dbeafe" stroke="#1e40af" stroke-width="2" filter="url(#shadow1)"/>
+  <text x="800" y="144" text-anchor="middle" font-size="10" font-weight="600" fill="#1e40af">C6</text>
+
+  <!-- feature branch -->
+  <path d="M260,140 Q300,220 340,260" fill="none" stroke="#10b981" stroke-width="2.5" stroke-dasharray="6,3"/>
+  <line x1="340" y1="260" x2="620" y2="260" stroke="#10b981" stroke-width="2.5"/>
+  <path d="M620,260 Q660,220 700,140" fill="none" stroke="#10b981" stroke-width="2.5" stroke-dasharray="6,3"/>
+  <text x="40" y="265" font-size="13" font-weight="600" fill="#10b981">feature</text>
+
+  <circle cx="380" cy="260" r="14" fill="#d1fae5" stroke="#10b981" stroke-width="2" filter="url(#shadow1)"/>
+  <text x="380" y="264" text-anchor="middle" font-size="10" font-weight="600" fill="#10b981">C2</text>
+
+  <circle cx="500" cy="260" r="14" fill="#d1fae5" stroke="#10b981" stroke-width="2" filter="url(#shadow1)"/>
+  <text x="500" y="264" text-anchor="middle" font-size="10" font-weight="600" fill="#10b981">C3</text>
+
+  <circle cx="600" cy="260" r="14" fill="#d1fae5" stroke="#10b981" stroke-width="2" filter="url(#shadow1)"/>
+  <text x="600" y="264" text-anchor="middle" font-size="10" font-weight="600" fill="#10b981">C5</text>
+
+  <!-- bugfix branch -->
+  <path d="M500,140 Q520,180 540,380" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-dasharray="6,3"/>
+  <line x1="540" y1="380" x2="680" y2="380" stroke="#f59e0b" stroke-width="2.5"/>
+  <path d="M680,380 Q720,300 800,140" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-dasharray="6,3"/>
+  <text x="40" y="385" font-size="13" font-weight="600" fill="#f59e0b">bugfix</text>
+
+  <circle cx="580" cy="380" r="14" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" filter="url(#shadow1)"/>
+  <text x="580" y="384" text-anchor="middle" font-size="10" font-weight="600" fill="#f59e0b">B1</text>
+
+  <circle cx="660" cy="380" r="14" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" filter="url(#shadow1)"/>
+  <text x="660" y="384" text-anchor="middle" font-size="10" font-weight="600" fill="#f59e0b">B2</text>
+
+  <!-- Annotations -->
+  <rect x="100" y="440" width="180" height="56" rx="6" fill="#f0f4ff" stroke="#1e40af" stroke-width="1"/>
+  <text x="190" y="460" text-anchor="middle" font-size="11" font-weight="600" fill="#1e40af">checkout -b feature</text>
+  <text x="190" y="478" text-anchor="middle" font-size="10" fill="#6b7280">从 main 创建分支</text>
+
+  <rect x="360" y="440" width="180" height="56" rx="6" fill="#f0fdf4" stroke="#10b981" stroke-width="1"/>
+  <text x="450" y="460" text-anchor="middle" font-size="11" font-weight="600" fill="#10b981">独立开发 &amp; 提交</text>
+  <text x="450" y="478" text-anchor="middle" font-size="10" fill="#6b7280">feature 分支上工作</text>
+
+  <rect x="620" y="440" width="180" height="56" rx="6" fill="#fffbeb" stroke="#f59e0b" stroke-width="1"/>
+  <text x="710" y="460" text-anchor="middle" font-size="11" font-weight="600" fill="#f59e0b">merge --no-ff</text>
+  <text x="710" y="478" text-anchor="middle" font-size="10" fill="#6b7280">合并回 main 保留记录</text>
+
+  <!-- HEAD pointer -->
+  <rect x="770" y="80" width="60" height="26" rx="12" fill="#ef4444" stroke="none"/>
+  <text x="800" y="97" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">HEAD</text>
+  <line x1="800" y1="106" x2="800" y2="126" stroke="#ef4444" stroke-width="1.5" marker-end="url(#ah1)"/>
+</svg>

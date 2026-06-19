@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8f3ea"/>
+      <stop offset="100%" stop-color="#ede4d4"/>
+    </linearGradient>
+    <pattern id="grid" width="46" height="46" patternUnits="userSpaceOnUse">
+      <path d="M 46 0 L 0 0 0 46" fill="none" stroke="#d8cfbe" stroke-width="1"/>
+    </pattern>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#163246" flood-opacity="0.14"/>
+    </filter>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto">
+      <path d="M 0 0 L 12 6 L 0 12 Z" fill="#2f6a95"/>
+    </marker>
+    <style><![CDATA[
+      .title{font-family:'Noto Serif SC','Source Han Serif SC','Songti SC',serif;font-size:52px;font-weight:700;fill:#18384d}
+      .kicker{font-family:'JetBrains Mono','Fira Code','Cascadia Code',monospace;font-size:18px;letter-spacing:2px;fill:#a15d2d}
+      .big{font-family:'Noto Serif SC','Source Han Serif SC','Songti SC',serif;font-size:28px;font-weight:700;fill:#18384d}
+      .body{font-family:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;font-size:21px;fill:#314755}
+      .label{font-family:'JetBrains Mono','Fira Code','Cascadia Code',monospace;font-size:14px;letter-spacing:1.2px;fill:#5e6d78}
+    ]]></style>
+  </defs>
+
+  <rect width="1440" height="900" fill="url(#bg)"/>
+  <rect width="1440" height="900" fill="url(#grid)" opacity="0.58"/>
+
+  <text x="92" y="94" class="kicker">ENTROPY / CLEANUP / REPLICATION</text>
+  <text x="92" y="150" class="title">
+    <tspan x="92" dy="0">坏模式一旦存活，</tspan>
+    <tspan x="92" dy="56">agent 会替你把它扩散开</tspan>
+  </text>
+
+  <g filter="url(#shadow)">
+    <rect x="92" y="232" width="572" height="548" rx="28" fill="#fbf8f1" stroke="#c8b8a2" stroke-width="2.4"/>
+    <rect x="776" y="232" width="572" height="548" rx="28" fill="#fffaf2" stroke="#c8b8a2" stroke-width="2.4"/>
+  </g>
+
+  <text x="128" y="294" class="label">LEFT SIDE</text>
+  <text x="128" y="336" class="big">债务放大</text>
+  <rect x="136" y="388" width="160" height="84" rx="18" fill="#f8ddcf" stroke="#c56a2d" stroke-width="2"/>
+  <text x="166" y="436" class="body">坏模式</text>
+  <text x="166" y="462" class="body">留在仓库</text>
+
+  <rect x="372" y="324" width="154" height="72" rx="16" fill="#f3e6d8" stroke="#c8b8a2" stroke-width="2"/>
+  <rect x="372" y="420" width="154" height="72" rx="16" fill="#f3e6d8" stroke="#c8b8a2" stroke-width="2"/>
+  <rect x="372" y="516" width="154" height="72" rx="16" fill="#f3e6d8" stroke="#c8b8a2" stroke-width="2"/>
+  <rect x="372" y="612" width="154" height="72" rx="16" fill="#f3e6d8" stroke="#c8b8a2" stroke-width="2"/>
+  <text x="410" y="366" class="body">复制到</text>
+  <text x="410" y="462" class="body">新文件</text>
+  <text x="410" y="558" class="body">新模块</text>
+  <text x="410" y="654" class="body">新 PR</text>
+
+  <path d="M 296 430 C 330 396, 346 380, 372 360" fill="none" stroke="#c56a2d" stroke-width="3.5" marker-end="url(#arrow)"/>
+  <path d="M 296 430 C 332 432, 344 440, 372 456" fill="none" stroke="#c56a2d" stroke-width="3.5" marker-end="url(#arrow)"/>
+  <path d="M 296 430 C 334 470, 346 500, 372 552" fill="none" stroke="#c56a2d" stroke-width="3.5" marker-end="url(#arrow)"/>
+  <path d="M 296 430 C 338 516, 350 576, 372 648" fill="none" stroke="#c56a2d" stroke-width="3.5" marker-end="url(#arrow)"/>
+
+  <text x="812" y="294" class="label">RIGHT SIDE</text>
+  <text x="812" y="336" class="big">持续清理</text>
+  <circle cx="934" cy="456" r="96" fill="#e8f0ef" stroke="#2f6a95" stroke-width="3"/>
+  <text x="874" y="442" class="label">BOT</text>
+  <text x="846" y="482" class="big">Cleanup</text>
+
+  <rect x="1082" y="326" width="200" height="84" rx="18" fill="#edf3e4" stroke="#8caa64" stroke-width="2"/>
+  <rect x="1082" y="436" width="200" height="84" rx="18" fill="#edf3e4" stroke="#8caa64" stroke-width="2"/>
+  <rect x="1082" y="546" width="200" height="84" rx="18" fill="#edf3e4" stroke="#8caa64" stroke-width="2"/>
+
+  <text x="1114" y="376" class="body">扫描 slop</text>
+  <text x="1114" y="486" class="body">拆小 PR</text>
+  <text x="1114" y="596" class="body">持续偿还</text>
+
+  <path d="M 1008 410 C 1032 390, 1054 380, 1082 368" fill="none" stroke="#2f6a95" stroke-width="3.5" marker-end="url(#arrow)"/>
+  <path d="M 1030 456 H 1082" fill="none" stroke="#2f6a95" stroke-width="3.5" marker-end="url(#arrow)"/>
+  <path d="M 1008 504 C 1032 526, 1056 546, 1082 588" fill="none" stroke="#2f6a95" stroke-width="3.5" marker-end="url(#arrow)"/>
+
+  <text x="92" y="796" class="body">
+    <tspan x="92" dy="0">如果不制度化清理，仓库里每一个妥协都会被 agent 当成“推荐做法”。</tspan>
+    <tspan x="92" dy="30">控制熵的关键不是一次大扫除，而是持续的自动偿还。</tspan>
+  </text>
+</svg>

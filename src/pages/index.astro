@@ -1,0 +1,92 @@
+---
+import SimpleLayout from "../layouts/SimpleLayout.astro";
+import { homepage } from "../data/homepage";
+---
+
+<SimpleLayout
+	title="homepage"
+	description="Homepage of Chuan Xiao, also known as shaoyou."
+>
+	<section class="hero">
+		<div>
+			<p class="eyebrow">Homepage / Code agents / Security</p>
+			<h1>{homepage.siteName}</h1>
+			<p class="hero-summary">{homepage.summary}</p>
+			<div class="hero-actions">
+				<a class="button" href="/blogs/">Read blogs</a>
+				<a class="button secondary" href={homepage.github}>GitHub</a>
+			</div>
+			<div class="pill-row" aria-label="Research interests">
+				{homepage.interests.map((interest) => <span class="pill">{interest}</span>)}
+			</div>
+		</div>
+		<aside class="identity-panel" aria-label="Profile">
+			<h2>{homepage.name}</h2>
+			<p>{homepage.role}</p>
+			<ul class="fact-list">
+				<li><strong>Also</strong><span>{homepage.displayName} / {homepage.handle}</span></li>
+				<li><strong>School</strong><span>{homepage.affiliation}</span></li>
+				<li><strong>Based in</strong><span>{homepage.location}</span></li>
+				<li><strong>Grad</strong><span>{homepage.graduation}</span></li>
+			</ul>
+		</aside>
+	</section>
+
+	<section class="section" id="news">
+		<h2>News</h2>
+		<div class="stack">
+			{homepage.news.map((item) => (
+				<article class="item">
+					<p class="date">{item.date}</p>
+					<p>{item.text}</p>
+				</article>
+			))}
+		</div>
+	</section>
+
+	<section class="section" id="research">
+		<h2>Research</h2>
+		<div class="stack">
+			{homepage.research.map((item) => (
+				<article class="item">
+					<h3>{item.title}</h3>
+					<p>{item.description}</p>
+				</article>
+			))}
+		</div>
+	</section>
+
+	<section class="section" id="publications">
+		<h2>Publications</h2>
+		<div class="stack">
+			{homepage.publications.map((item) => (
+				<article class="item">
+					<h3>{item.title}</h3>
+					<p class="meta">{item.venue}</p>
+					<p>{item.authors}</p>
+					<p>{item.description}</p>
+				</article>
+			))}
+		</div>
+	</section>
+
+	<section class="section" id="education">
+		<h2>Education</h2>
+		<div class="stack">
+			{homepage.education.map((item) => (
+				<article class="item">
+					<h3>{item.school}</h3>
+					<p class="meta">{item.program} / {item.period}</p>
+					<p>{item.detail}</p>
+				</article>
+			))}
+		</div>
+	</section>
+
+	<section class="section" id="awards">
+		<h2>Awards</h2>
+		<ul class="clean-list">
+			{homepage.awards.map((award) => <li>{award}</li>)}
+		</ul>
+	</section>
+</SimpleLayout>
